@@ -130,8 +130,8 @@ The agent structure is as follows:
   - a light agent-client side that collects the data of the algorithm and sends it the agent-server running in background (don't forget to launch agent.run_local_server() or use server.py)
   - a agent-server side that **asynchronously** handles the data received to compute a wide variety of time series metrics.
  
-The agent was designed not to slow down the production process by using **multithreading**. 
-It also skips the data if a problem is met and records logs accordingly. 
+
+It skips the data if a problem is met and records logs accordingly. 
 The agent is a light weight collector that stores up to `max_buffer_size` datapoints every period. 
 Above this limit, sampling is done using a 'Reservoir sampling' algorithm so the sampled data remains statistically significant. 
  
